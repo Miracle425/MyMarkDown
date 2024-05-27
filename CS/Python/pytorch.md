@@ -15,7 +15,7 @@
 
 # 1. Pytorch学习笔记
 
-![1716624774220](../.images/pytorch/1716624774220.png)
+![1716624774220](../../.images/pytorch/1716624774220.png)
 
 ## 1.1. torch.Tensor
 
@@ -84,4 +84,4 @@
 
 ## 1.9. 总结
 
-![alt text](image/pytorch/image.png)
+![alt text](../../.images/pytorch/image.png)
