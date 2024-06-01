@@ -1,4 +1,4 @@
-- [1. Pytorch学习笔记](#1-pytorch学习笔记)
+- [1. 基本架构](#1-基本架构)
   - [1.1. torch.Tensor](#11-torchtensor)
   - [1.2. torch.Storage](#12-torchstorage)
   - [1.3. torch.nn](#13-torchnn)
@@ -13,7 +13,7 @@
   - [1.8. torchvision](#18-torchvision)
   - [1.9. 总结](#19-总结)
 
-# 1. Pytorch学习笔记
+# 1. 基本架构
 
 ![1716624774220](../../.images/pytorch/1716624774220.png)
 

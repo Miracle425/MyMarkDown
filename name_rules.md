@@ -9,6 +9,7 @@
 1. 工程名用大驼峰，如SoftWare，FlightSystem，Application这种
 2. 工程内的文件夹名字可以用大驼峰，也可以用小写，起特定强调的作用的，用于文档分类的，本身就是大写的或者缩写的(ADC,PCB,CS)用大驼峰。一些小的包，模块，众所周知的命名(lib,src,inc,back,sys,uart,gradle,test,main)用小写(单词多的画用"_"连接，比如：node_modules，update_installer)
 3. 配置文件夹用.打头
+4. 特殊规范特殊对待，比如java命名，遵守社区约定
 
 ## 1.2. 文件命名法
 
