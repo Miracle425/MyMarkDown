@@ -1,6 +1,6 @@
 # ADC学习笔记
 
-![alt text](../.images/ADC/image.png)
+![alt text](../.images/adc/image.png)
 
 ## 18个通道
 
@@ -25,7 +25,7 @@ injected channel最多可以选择4个通道,regular channel最多可以选择16
 
 定时器可以通向ADC和DAC,触发转换
 
-![alt text](../.images/ADC/image-1.png)
+![alt text](../.images/adc/image-1.png)
 
 ***将TIM3的更新事件选择为TRGO输出,ADC的开始触发信号选择为TIM3的TRGO,这样TIM3的更新事件就能通过硬件自动触发ADC的转换了,节省了中断资源***
 
@@ -33,15 +33,15 @@ injected channel最多可以选择4个通道,regular channel最多可以选择16
 
 ## 参考电压
 
-![alt text](../.images/ADC/image-2.png)
+![alt text](../.images/adc/image-2.png)
 
 芯片内部中已经连接了
 
 ## ADCCLK
 
-![](../.images/ADC/image-3.png)
+![](../.images/adc/image-3.png)
 
-![alt text](../.images/ADC/image-4.png)
+![alt text](../.images/adc/image-4.png)
 
 ADCCLK来自于APB2上,经过ADC预分频器分频成为ADCCLK
 
@@ -51,19 +51,19 @@ ADCCLK来自于APB2上,经过ADC预分频器分频成为ADCCLK
 
 ## 一次转换完成处理
 
-![alt text](../.images/ADC/image-5.png)
+![alt text](../.images/adc/image-5.png)
 
 在模拟开门狗检测到通道超过阈值范围,注入通道(JEOC),规则通道(EOC)转换完成后,都会将状态寄存器中置标志位,也可以去NVIC申请中断,如果开启了NVIC对应的通道,他们就可以触发中断
 
 ## 基本结构图
 
-![alt text](../.images/ADC/image-6.png)
+![alt text](../.images/adc/image-6.png)
 
 ## ADC通道和引脚复用的关系
 
-![alt text](../.images/ADC/image-7.png)
+![alt text](../.images/adc/image-7.png)
 
-![alt text](../.images/ADC/image-8.png)
+![alt text](../.images/adc/image-8.png)
 
 上图ADC12_IN0代表ADC1_IN0和ADC2_IN0
 
@@ -81,19 +81,19 @@ ADC1和ADC2可以进行交叉采样,即对一个通道交叉进行采样,(类似
 
 1. 单次转换,非扫描模式
 
-![alt text](../.images/ADC/image-10.png)
+![alt text](../.images/adc/image-10.png)
 
 ***只有一个通道,启动一次转换一次***
 
 2. 连续转换,非扫描模式
 
-![alt text](../.images/ADC/image-11.png)
+![alt text](../.images/adc/image-11.png)
 
 ***只有一个通道,启动一次一直转换下去***
 
 3. 单次转换,扫描模式
 
-![alt text](../.images/ADC/image-12.png)
+![alt text](../.images/adc/image-12.png)
 
 ***可以指定通道数目(前n个通道),依次转换前n个通道,为了防止数据覆盖,需要使用DMA,启动依次转换依次***
 
@@ -102,11 +102,11 @@ ADC1和ADC2可以进行交叉采样,即对一个通道交叉进行采样,(类似
 
 ## 触发控制
 
-![alt text](../.images/ADC/image-13.png)
+![alt text](../.images/adc/image-13.png)
 
 ## 数据对齐
 
-![alt text](../.images/ADC/image-14.png)
+![alt text](../.images/adc/image-14.png)
 
 ADC的数据是12位 但是数据寄存器是16位的
 
@@ -116,7 +116,7 @@ ADC的数据是12位 但是数据寄存器是16位的
 
 ## AD转换时间(转换步骤)
 
-![alt text](../.images/ADC/image-15.png)
+![alt text](../.images/adc/image-15.png)
 
 ***采样保持:打开采样开关,收集电压,再断开采样开关,避免连续变化的电压使得无法正常采样***
 
@@ -128,11 +128,11 @@ ADC周期多半个的原因:干其他事情(具体什么也不知道)
 
 ## 校准
 
-![alt text](../.images/ADC/image-16.png)
+![alt text](../.images/adc/image-16.png)
 
 ## 硬件电路
 
-![alt text](../.images/ADC/image-17.png)
+![alt text](../.images/adc/image-17.png)
 
 PA1/2/3 接AD转换器
 
@@ -142,28 +142,28 @@ PA1/2/3 接AD转换器
 
 ## ADC状态寄存器(ADC_SR ADC Status Register)
 
-![alt text](../.images/ADC/image-18.png)
+![alt text](../.images/adc/image-18.png)
 
 ## ADC控制寄存器1(ADC_CR1)
 
-![alt text](../.images/ADC/image-19.png)
+![alt text](../.images/adc/image-19.png)
 
-![alt text](../.images/ADC/image-20.png)
+![alt text](../.images/adc/image-20.png)
 
-![alt text](../.images/ADC/image-21.png)
+![alt text](../.images/adc/image-21.png)
 
-![alt text](../.images/ADC/image-22.png)
+![alt text](../.images/adc/image-22.png)
 
 ## ADC控制寄存器1(ADC_CR2,软件触发控制)
 
-![alt text](../.images/ADC/image-23.png)
+![alt text](../.images/adc/image-23.png)
 
-![alt text](../.images/ADC/image-24.png)
+![alt text](../.images/adc/image-24.png)
 
-![alt text](../.images/ADC/image-25.png)
+![alt text](../.images/adc/image-25.png)
 
-![alt text](../.images/ADC/image-26.png)
+![alt text](../.images/adc/image-26.png)
 
-![alt text](../.images/ADC/image-27.png)
+![alt text](../.images/adc/image-27.png)
 
-![alt text](../.images/ADC/image-28.png)
+![alt text](../.images/adc/image-28.png)

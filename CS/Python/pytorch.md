@@ -12,6 +12,8 @@
   - [1.7. torch.utils](#17-torchutils)
   - [1.8. torchvision](#18-torchvision)
   - [1.9. 总结](#19-总结)
+- [基本知识](#基本知识)
+  - [Tensor](#tensor)
 
 # 1. 基本架构
 
@@ -85,3 +87,47 @@
 ## 1.9. 总结
 
 ![alt text](../../.images/pytorch/image.png)
+
+# 基本知识
+
+## Tensor
+
+- 是一个多维数组，支持自动求导，和numpy中的ndarray类似
+- 加法操作
+
+```python
+import torch
+# 1
+print(x+y)
+# 2
+print(torch.add(x,y))
+# 3
+result = torch.Tensor(5,3)
+torch.add(x,y,out=result)
+print(result)
+# 4
+y.add_(x)
+print(y)
+# 注意，带_的操作会改变原来的tensor
+```
+
+- view方法(改变形状)
+
+```python
+x = torch.randn(4,4)
+y = x.view(16)
+z = x.view(-1,8)
+# 这时候 x,y,z的形状分别是(4,4),(16,1),(2,8)
+```
+
+- numpy转换
+
+```python
+import torch
+a = torch.ones(5)
+b = a.numpy()
+# 这时候b是一个numpy数组
+c = torch.from_numpy(b)
+# 这时候c是一个tensor
+```
+## auto_grad（自动求导）

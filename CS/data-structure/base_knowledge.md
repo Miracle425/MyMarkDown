@@ -19,6 +19,7 @@
     - [冲突的解决方法](#冲突的解决方法)
     - [查找](#查找-1)
     - [性质](#性质)
+  - [做题知识](#做题知识)
 
 # 1. 基本理论知识
 
@@ -123,6 +124,11 @@ $$
 
 - 队列长度(rear-front+MAXSIZE)%MAXSIZE
 
+## 链队列
+![alt text](../../.images/base_knowledge/image-10.png)
+- 使用了dummynode，Q.front不代表任何值，Q.front->next才是第一个元素
+- Q.front->next代表第一个元素和Q.rear代表最后一个元素，两者都是指代一个链表上节点的指针
+- 正常来说，删除节点只删除对头的节点，但是队头节点和队尾节点相等的时候，就是只剩下了一个元素，这时候再删除就把队尾的给删除了，队尾指针指向的内存给删了，如何判断呢，当Q->next==Q.rear的时候代表只剩下了一个元素，此时要删的时候需要delete Q->next,然后Q.rear=Q.front。此时就是判空的条件成立
 ## 哈希表（散列表）
 
 ### 冲突的解决方法
@@ -145,3 +151,34 @@ $$
 ### 性质
 
 - 填装因子：$\frac{填入表中的元素}{表总长度}$
+## 串
+- 空格串和空串分开
+- 串的模式匹配/串匹配：在主串中找到子串的位置
+- 子串也叫做模式串（模式）
+- 空串是由0个字符组成的串，空格串是由若干个空格组成的串
+## 做题知识
+
+![alt text](../../.images/base_knowledge/image-1.png)
+![alt text](../../.images/base_knowledge/image-2.png)
+![alt text](../../.images/base_knowledge/image-3.png)
+![alt text](../../.images/base_knowledge/image-4.png)
+n或者1
+![alt text](../../.images/base_knowledge/image-5.png)
+
+注意D，有且仅有一个前继和后驱（是和不是或，除了开头和结尾只有一个）
+
+![alt text](../../.images/base_knowledge/image-6.png)
+意是有序的，单纯的单链表是O(n),但要有序的话还要考虑插入位置，所以是O(n2)
+
+![alt text](../../.images/base_knowledge/image-7.png)
+top->link出栈
+
+![alt text](../../.images/base_knowledge/image-8.png)
+栈顶不一定从0开始，也可以从n开始（向量就是数组，[1,,n]表示下标范围）
+
+![alt text](../../.images/base_knowledge/image-9.png)
+ababaabab
+123456789
+011234234
+xaababbab
+010104101
