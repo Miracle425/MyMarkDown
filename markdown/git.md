@@ -1,8 +1,14 @@
 # 查漏补缺
 
-- stage change的作用就是add
-- ![alt text](.images/git/image.png)
--
+stage change的作用就是add
+![alt text](.images/git/image.png)
+
+```shell
+git config core.ignoreCase false
+```
+这句作用是设置大小写敏感，即不忽略大小写
+
+```shell
 
 # reset
 
