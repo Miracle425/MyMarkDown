@@ -1,7 +1,7 @@
 # 查漏补缺
 
 stage change的作用就是add
-![alt text](.images/git/image.png)
+![alt text](../.images/git/image.png)
 
 ```shell
 git config core.ignoreCase false
